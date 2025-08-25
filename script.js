@@ -1,1 +1,3 @@
-console.log("Welcome to this Rock Paper Scissors!");
+function getComputerChoice() {
+    
+}
