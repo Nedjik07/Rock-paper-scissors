@@ -38,7 +38,7 @@ function playRound(computerChoice, humanChoice) {
         console.log("You win! Scissors beats Paper");
     } else if ((humanChoice === "scissors") && (computerChoice === "Rock")) {
         console.log("You lose! Rock beats Scissors!");
-    } else ((humanChoice === "scissors") && (computerChoice === "Scissors")) // works
+    } else ((humanChoice === "scissors") && (computerChoice === "Scissors"))
         console.log("Draw!");
 }
 playRound();
