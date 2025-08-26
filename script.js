@@ -18,6 +18,9 @@ function getHumanChoice() {
     return prompt("Choose your weapon!: "); // This use a prompt to ask user about their choice and returns the value
 }
 
-function playRound() {
-
+function playRound(humanChoice, computerChoice) {
+    computerChoice = getComputerChoice();
+    humanChoice = getHumanChoice().toLocaleLowerCase();
+    
 }
+console.log(playRound());
