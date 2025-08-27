@@ -30,38 +30,35 @@ function playRound(computerChoice, humanChoice) {
     if (humanChoice === "rock" && computerChoice === "scissors") {
         console.log("You win! Rock beats Scissors");
         humanScore ++;
-        console.log("Your score: " + humanScore);
-        console.log("Computer score: " + computerScore);
+        alert("Your score: " + humanScore + '\n' + "Computer score: " + computerScore); // Show score
     } else if (humanChoice === "rock" && computerChoice === "paper") {
         console.log("You lose! Paper beats Rock!");
         computerScore ++;
-        console.log("Your score: " + humanScore);
-        console.log("Computer score: " + computerScore);
+        alert("Your score: " + humanScore + '\n' + "Computer score: " + computerScore); // Show score
     } else if (humanChoice === "paper" && computerChoice === "rock") {
         console.log("You win! Paper beats Rock!");
         humanScore ++;
-        console.log("Your score: " + humanScore);
-        console.log("Computer score: " + computerScore);
+        alert("Your score: " + humanScore + '\n' + "Computer score: " + computerScore); // Show score
     } else if (humanChoice === "paper" && computerChoice === "scissors") {
         console.log("You lose! Scissors beats Paper!");
         computerScore ++;
-        console.log("Your score: " + humanScore);
-        console.log("Computer score: " + computerScore);
+        alert("Your score: " + humanScore + '\n' + "Computer score: " + computerScore); // Show score
     } else if (humanChoice === "scissors" && computerChoice === "paper") {
         console.log("You win! Scissors beats Paper");
         humanScore ++;
-        console.log("Your score: " + humanScore);
-        console.log("Computer score: " + computerScore);
+        alert("Your score: " + humanScore + '\n' + "Computer score: " + computerScore); // Show score
     } else if (humanChoice === "scissors" && computerChoice === "rock") {
         console.log("You lose! Rock beats Scissors!");
         computerScore ++;
-        console.log("Your score: " + humanScore);
-        console.log("Computer score: " + computerScore);
+        alert("Your score: " + humanScore + '\n' + "Computer score: " + computerScore); // Show score
     } else {
         console.log("Draw!");
     }   
 }
 
 function playGame() {
-    
+    for (i = 0; i < 5; i++) {
+        playRound();
+        // alert("Your score: " + humanScore + '\n' + "Computer score: " + computerScore); // Show score
+    }
 }
