@@ -17,7 +17,7 @@ function getComputerChoice(n) {
 }
 
 function getHumanChoice() {
-    return prompt("Choose your weapon!: "); // This use a prompt to ask user about their choice and returns the value
+    return prompt("Choose your weapon!"); // This use a prompt to ask user about their choice and returns the value
 }
 
 function playRound(computerChoice, humanChoice) {
