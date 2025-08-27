@@ -61,3 +61,7 @@ function playRound(computerChoice, humanChoice) {
         console.log("Draw!");
     }   
 }
+
+function playGame() {
+    
+}
