@@ -20,3 +20,13 @@ button {
     color: #0D1B2A;
     font-size: large;
 }
+
+button:hover {
+    box-shadow: #171928 0 4px 8px, #171928 0 7px 13px -3px, #171928 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+button:active { 
+    box-shadow: #5b739d 0 3px 7px inset;
+    transform: translateY(2px);
+}
