@@ -1,36 +1,37 @@
 let humanScore = 0;
 let computerScore = 0;
 let numberRound = 1;
+const choices = ["rock","paper","scissors"]
 
 // Computer choice
 function getComputerChoice(n) {
-    // Choose a number between 0, 1, 2 with Math.floor and Math.random
-    // Use a condition to return between Rock, Paper, or Scissors
-    n = Math.floor(Math.random() * 3); // Simplified
-    if (n === 0) {
-        return "rock";
-    } else if (n === 1) {
-        return "paper";
-    } else if (n === 2) {
-        return "scissors";
-    }
+    n = Math.floor(Math.random()*3);
+    return choices[n];
 }
 
-// Play function
+
+
+// Round function
 function playRound(computerChoice, humanChoice) {
-    computerChoice = getComputerChoice().toLocaleLowerCase(); // Store computerChoice
+    computerChoice = getComputerChoice;
+    if (humanChoice === computerChoice) {
+        alert("Draw!");
+    }
+        else if (humanChoice) {
+
+    } 
 }
 
+// Use arrays. Use fake negative index by saying if i[0] -> len(arr)
 
-const btns = document.querySelectorAll('button')
+// const btns = document.querySelectorAll('button')
 
-btns.forEach(btn => {
-   btn.onclick = () => {
-    alert(btn.id);
-    
-    
-    const computerSelection = getComputerChoice();
-    playRound(computerSelection, btn.id);
-    alert(computerSelection);
-   }
-});
+// btns.forEach(btn => {
+//    btn.onclick = () => {
+//     alert(btn.id);
+//     const computerSelection = getComputerChoice();
+//     playRound(computerSelection, btn.id);
+//     alert(computerSelection);
+//    }
+// });
+
