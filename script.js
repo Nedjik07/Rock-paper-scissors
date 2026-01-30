@@ -21,6 +21,8 @@ function endRound() {
     const wrapper = document.createElement("div");
     const round = document.createElement("div");
     const score = document.createElement("p");
+
+    score.setAttribute("style", "white-space: pre;");
     
     // style classes
     container.classList.add("container");
@@ -29,7 +31,7 @@ function endRound() {
 
 
     round.textContent = "Round number " + numberRound;
-    score.textContent = ("Score: " + "You: " + humanScore + "Computer: " + computerScore);
+    score.textContent = "You: " + humanScore + "\r\n" + "Computer: " + computerScore;
 
 
     container.removeChild(container.lastChild);
