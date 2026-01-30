@@ -20,7 +20,6 @@ function draw() {
 }
 // choices output
 function displayChoices(h, c) {
-    // alert("you: " + h.toString() + "computer: " + c.toString());
     const display = document.querySelector("#display");
     const choices = document.createElement("div");
     choices.setAttribute("style", "white-space: pre;");
@@ -58,6 +57,7 @@ function whoWon() {
 // Main function
 function playRound(h) {
     numberRound++;
+    // Think of a way to reinitialize score after winner
     console.log("c: " + computerScore + "h: " + humanScore); // this is a test
     if (humanScore === 5) {
         alert("you won!"); // change for won function after creating it above
