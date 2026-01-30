@@ -2,75 +2,84 @@ let humanScore = 0;
 let computerScore = 0;
 let numberRound = 0;
 const choices = ["rock","paper","scissors"];
-
 // Computer choice
 function getComputerChoice(n) {
     n = Math.floor(Math.random()*3);
     return n;
 }
-
+// Win, loss, draw
 function win() {
     humanScore++;
 }
-function lose() {
+function loss() {
     computerScore++;
 }
-
+function draw() {
+    computerScore = computerScore;
+    humanScore = humanScore;
+}
+// display choices function
+function displayChoices(h, c) {
+    // alert("you: " + h.toString() + "computer: " + c.toString());
+    const display = document.querySelector("#display");
+    const choices = document.createElement("div");
+    choices.setAttribute("style", "white-space: pre;");
+    choices.textContent = "Your choice: " + h + "\r\n" + "Computer Choice: " + c;
+    display.removeChild(display.lastChild);
+    display.appendChild(choices);
+}
+// function after a round
 function endRound() {
-    const container = document.querySelector("div"); // Selects div
+    display.replaceChildren();
+    const display = document.querySelector("#display"); // Selects div
     const wrapper = document.createElement("div");
     const round = document.createElement("div");
-    const score = document.createElement("p");
-
-    score.setAttribute("style", "white-space: pre;");
-    
+    const score = document.createElement("p");    
     // style classes
-    container.classList.add("container");
+    display.classList.add("display");
     wrapper.classList.add("wrapper");
     round.classList.add("round");
 
-
+    score.setAttribute("style", "white-space: pre;");
     round.textContent = "Round number " + numberRound;
     score.textContent = "You: " + humanScore + "\r\n" + "Computer: " + computerScore;
 
-
-    container.removeChild(container.lastChild);
+    display.removeChild(display.lastChild);
     wrapper.appendChild(round);
     wrapper.appendChild(score);
-    container.appendChild(wrapper);
+    display.appendChild(wrapper);
     
 }
-
 // Main function
 function playRound(h) {
     numberRound++;
     let c = getComputerChoice();
+    // Add a function that shows choices
     if ((c === 0) && (h === 2)) {
-        alert("loss");
+        loss();
+        displayChoices(h,c);
     }
     if ((h === 0) && (c === 2)) {
-        alert("win");
+        win();
+        displayChoices(h,c);
     }
-    
-    alert("h: " + h);
-    alert("c: " + c);
-
     if(h === c) {
-        alert("draw! round" + numberRound);
+        draw();
+        displayChoices(h,c);
     } else if (h < c) {
-        alert("you lose" + numberRound); 
+        loss();
+        displayChoices(h,c);
     } else if (h > c) {
-        alert("you win" + numberRound);
+        win();
+        displayChoices(h,c);
     }
-    // endRound();
+    // Add a loop that calls endRound 
+    // function after someone reaches 5 points
 }
-
-// Use arrays. Use fake negative index by saying if i[0] -> len(arr)
-
 const btns = document.querySelectorAll("button");
-
 btns.forEach(btn => {
-   btn.onclick = () => {
-    playRound(parseInt(btn.id)); 
+    btn.onclick = () => {
+        console.log("hello");
+       playRound(parseInt(btn.id));
    }
 });
