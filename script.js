@@ -48,9 +48,22 @@ function endRound() {
     display.appendChild(wrapper);
     
 }
+function whoWon() {
+    if (humanScore === 5) {
+        alert("you won!");
+    } else if (computerScore === 5) { // delete this shitty function
+        alert("you lost...");
+    }
+}
 // Main function
 function playRound(h) {
     numberRound++;
+    console.log("c: " + computerScore + "h: " + humanScore); // this is a test
+    if (humanScore === 5) {
+        alert("you won!"); // change for won function after creating it above
+    } else if(computerScore === 5) {
+        alert("you lost..."); // change for lost function after creating it above
+    }
     let c = getComputerChoice();
     // Add a function that shows choices
     if ((c === 0) && (h === 2)) {
@@ -71,18 +84,12 @@ function playRound(h) {
         displayChoices(h,c);
         return win();
     }
-    if ((h === 5)||(c===5)) {
-        const display = document.querySelector("#display");
-        display.replaceChildren();
-        return endRound();
-    }
 }
 const btns = document.querySelectorAll("button");
 btns.forEach(btn => {
     btn.onclick = () => {
         const display = document.querySelector("#display");
         display.replaceChildren();
-        console.log("hello");
         return playRound(parseInt(btn.id));
    }
 });
