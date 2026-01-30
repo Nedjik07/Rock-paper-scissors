@@ -17,14 +17,29 @@ function lose() {
 }
 
 function endRound() {
-    const content = document.querySelector("#div");
-    const wrap = document.createElement("div");
-    wrap.textContent = "Round Number " + numberRound;
-    content.appendChild(wrap);
-    //remove previous div
+    const container = document.querySelector("div"); // Selects div
+    const wrapper = document.createElement("div");
+    const round = document.createElement("div");
+    const score = document.createElement("p");
+    
+    // style classes
+    container.classList.add("container");
+    wrapper.classList.add("wrapper");
+    round.classList.add("round");
+
+
+    round.textContent = "Round number " + numberRound;
+    score.textContent = ("Score: " + "You: " + humanScore + "Computer: " + computerScore);
+
+
+    container.removeChild(container.lastChild);
+    wrapper.appendChild(round);
+    wrapper.appendChild(score);
+    container.appendChild(wrapper);
+    
 }
 
-// Round function
+// Main function
 function playRound(h) {
     numberRound++;
     let c = getComputerChoice();
