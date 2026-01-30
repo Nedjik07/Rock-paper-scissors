@@ -9,7 +9,20 @@ function getComputerChoice(n) {
     return n;
 }
 
+function win() {
+    humanScore++;
+}
+function lose() {
+    computerScore++;
+}
 
+function endRound() {
+    const content = document.querySelector("#div");
+    const wrap = document.createElement("div");
+    wrap.textContent = "Round Number " + numberRound;
+    content.appendChild(wrap);
+    //remove previous div
+}
 
 // Round function
 function playRound(h) {
@@ -26,24 +39,20 @@ function playRound(h) {
     alert("c: " + c);
 
     if(h === c) {
-        alert("draw! round" + numberRound); // ok
+        alert("draw! round" + numberRound);
     } else if (h < c) {
         alert("you lose" + numberRound); 
-        humanScore--;
-        computerScore++;
     } else if (h > c) {
         alert("you win" + numberRound);
-        humanScore++;
-        computerScore--;
     }
-    alert(choices);
+    // endRound();
 }
 
 // Use arrays. Use fake negative index by saying if i[0] -> len(arr)
 
-const btn = document.querySelectorAll('button');
+const btns = document.querySelectorAll("button");
 
-btn.forEach(btn => {
+btns.forEach(btn => {
    btn.onclick = () => {
     playRound(parseInt(btn.id)); 
    }
