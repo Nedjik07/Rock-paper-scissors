@@ -18,19 +18,17 @@ function draw() {
     computerScore = computerScore;
     humanScore = humanScore;
 }
-// display choices function
+// choices output
 function displayChoices(h, c) {
     // alert("you: " + h.toString() + "computer: " + c.toString());
     const display = document.querySelector("#display");
     const choices = document.createElement("div");
     choices.setAttribute("style", "white-space: pre;");
     choices.textContent = "Your choice: " + h + "\r\n" + "Computer Choice: " + c;
-    display.removeChild(display.lastChild);
     display.appendChild(choices);
 }
-// function after a round
+// result output
 function endRound() {
-    display.replaceChildren();
     const display = document.querySelector("#display"); // Selects div
     const wrapper = document.createElement("div");
     const round = document.createElement("div");
@@ -56,30 +54,37 @@ function playRound(h) {
     let c = getComputerChoice();
     // Add a function that shows choices
     if ((c === 0) && (h === 2)) {
-        loss();
         displayChoices(h,c);
+        return loss();
     }
     if ((h === 0) && (c === 2)) {
-        win();
         displayChoices(h,c);
+        return win();
     }
     if(h === c) {
-        draw();
         displayChoices(h,c);
+        return draw();
     } else if (h < c) {
-        loss();
         displayChoices(h,c);
+        return loss();
     } else if (h > c) {
-        win();
         displayChoices(h,c);
+        return win();
     }
-    // Add a loop that calls endRound 
-    // function after someone reaches 5 points
+    if ((h === 5)||(c===5)) {
+        const display = document.querySelector("#display");
+        display.replaceChildren();
+        return endRound();
+    }
 }
 const btns = document.querySelectorAll("button");
 btns.forEach(btn => {
     btn.onclick = () => {
+        const display = document.querySelector("#display");
+        display.replaceChildren();
         console.log("hello");
-       playRound(parseInt(btn.id));
+        return playRound(parseInt(btn.id));
    }
 });
+
+// Find a way to simplify by moving variables to beginning
