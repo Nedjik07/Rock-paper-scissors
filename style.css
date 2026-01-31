@@ -2,14 +2,19 @@
     font-family: Arial, Helvetica, sans-serif;
     margin: 50px;
 }
-
+h1 {
+    font-size: large;
+}
+h2 {
+    font-size: medium;
+    color: yellow;
+}
 body {
     background-color: #0D1B2A;
     color: #E0E1DD;
     text-align: center;
     box-sizing: content-box;
 }
-
 button {
     background-color: #778DA9;
     padding: 15px;
@@ -20,12 +25,10 @@ button {
     color: #0D1B2A;
     font-size: large;
 }
-
 button:hover {
     box-shadow: #171928 0 4px 8px, #171928 0 7px 13px -3px, #171928 0 -3px 0 inset;
     transform: translateY(-2px);
 }
-
 button:active { 
     box-shadow: #5b739d 0 3px 7px inset;
     transform: translateY(2px);

@@ -7,6 +7,13 @@ function getComputerChoice(n) {
     n = Math.floor(Math.random()*3);
     return n;
 }
+// Start
+function play() {
+   // Use div overlay here ?
+}
+function won() {
+    // Write function so that it looks good
+}
 // Win, loss, draw
 function win() {
     humanScore++;
@@ -25,6 +32,19 @@ function displayChoices(h, c) {
     choices.setAttribute("style", "white-space: pre;");
     choices.textContent = "Your choice: " + h + "\r\n" + "Computer Choice: " + c;
     display.appendChild(choices);
+}
+function score() {
+    const display = document.querySelector("#display");
+    display.replaceChildren(); // rmv children
+    const scorePanel = document.createElement("div");
+    const score = document.createElement("div");
+    score.setAttribute("style", "white-space: pre;");
+    const h1 = document.createElement("h1");
+    h1.textContent = "Score";
+    score.textContent = "You: " + humanScore + "Computer: " + computerScore;
+    scorePanel.appendChild(h1);
+    scorePanel.appendChild(score);
+    display.appendChild(scorePanel);
 }
 // result output
 function endRound() {
@@ -85,8 +105,8 @@ function playRound(h) {
         return win();
     }
 }
-const btns = document.querySelectorAll("button");
-btns.forEach(btn => {
+const buttons = document.querySelectorAll("button");
+buttons.forEach(btn => {
     btn.onclick = () => {
         const display = document.querySelector("#display");
         display.replaceChildren();
