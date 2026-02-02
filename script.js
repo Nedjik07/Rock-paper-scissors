@@ -28,10 +28,26 @@ function draw() {
 // choices output
 function displayChoices(h, c) {
     const display = document.querySelector("#display");
-    const choices = document.createElement("div");
-    choices.setAttribute("style", "white-space: pre;");
-    choices.textContent = "Your choice: " + h + "\r\n" + "Computer Choice: " + c;
-    display.appendChild(choices);
+    const displayChoices = document.createElement("div");
+    const humanChoice = document.createElement("div");
+    const computerChoice = document.createElement("div");
+    humanChoice.textContent = choices[h];
+    computerChoice.textContent = choices[c]; // Should return option;
+    humanChoice.classList.add("item");
+    computerChoice.classList.add("item");
+    displayChoices.classList.add("displayChoices");
+
+
+    displayChoices.appendChild(humanChoice);
+    displayChoices.appendChild(computerChoice);
+    display.appendChild(displayChoices);
+
+    // Add item class to items
+
+
+//     choices.setAttribute("style", "white-space: pre;");
+//     choices.textContent = "Your choice: " + h + "\r\n" + "Computer Choice: " + c;
+//     display.appendChild(choices);
 }
 function score() {
     const display = document.querySelector("#display");

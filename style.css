@@ -33,3 +33,32 @@ button:active {
     box-shadow: #5b739d 0 3px 7px inset;
     transform: translateY(2px);
 }
+#display {
+    background-color: lightblue;
+    height: 100px;
+    width: auto;
+    margin: auto 50px auto 50px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    shape-outside: none;
+    border: 2px solid black;
+}
+.item {
+    border-radius: 10px;
+    shape-outside: none;
+    border: 2px solid;
+    background-color: black;
+    width: 100px;
+    height: 30px;
+    margin: 10px auto 10px auto;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 10px;
+    border: 2px red;
+    shape-outside: none;
+    /* Center the options */
+}
+.displayChoices {
+    display: flex;
+}
