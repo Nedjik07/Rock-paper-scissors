@@ -15,6 +15,9 @@ body {
     text-align: center;
     box-sizing: content-box;
 }
+#container {
+    padding: 30px;
+}
 button {
     background-color: #778DA9;
     padding: 15px;
