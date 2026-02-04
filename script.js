@@ -14,6 +14,11 @@ function play() {
 function won() {
     // Write function so that it looks good
 }
+function lost() {
+    const display = document.querySelector("#display");
+    display.replaceChildren();
+    display.textContent = "caca";
+}
 // Win, loss, draw
 function win() {
     humanScore++;
@@ -82,13 +87,6 @@ function endRound() {
     wrapper.appendChild(score);
     display.appendChild(wrapper);
     
-}
-function whoWon() {
-    if (humanScore === 5) {
-        alert("you won!");
-    } else if (computerScore === 5) { // delete this shitty function
-        alert("you lost...");
-    }
 }
 // Main function
 function playRound(h) {
