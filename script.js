@@ -17,7 +17,9 @@ function won() {
 function lost() {
     const display = document.querySelector("#display");
     display.replaceChildren();
-    display.textContent = "caca";
+    // const message = document.createElement("h1");
+    // message.textContent = "caca";
+    // display.appendChild(message);
 }
 // Win, loss, draw
 function win() {
