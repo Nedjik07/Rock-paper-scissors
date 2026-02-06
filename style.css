@@ -4,19 +4,22 @@
 }
 h1 {
     font-size: large;
+    margin: 10px;
 }
 h2 {
     font-size: medium;
     color: yellow;
 }
 body {
+    margin: auto;
     background-color: #0D1B2A;
     color: #E0E1DD;
     text-align: center;
     box-sizing: content-box;
 }
 #container {
-    padding: 30px;
+    margin: 10px;
+    padding: 50px;
 }
 button {
     background-color: #778DA9;
@@ -38,7 +41,7 @@ button:active {
 }
 #display {
     background-color: lightblue;
-    height: 100px;
+    height: 300px;
     width: auto;
     margin: auto 50px auto 50px;
     display: flex;
@@ -53,7 +56,7 @@ button:active {
     background-color: black;
     width: 100px;
     height: 30px;
-    margin: 10px auto 10px auto;
+    margin: 25px auto 25px auto;
     text-align: center;
     padding: 10px 0;
     border-radius: 10px;
