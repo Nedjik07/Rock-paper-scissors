@@ -3,7 +3,7 @@
     margin: 50px;
 }
 h1 {
-    font-size: large;
+    font-size:larger;
     margin: 10px;
 }
 h2 {
@@ -19,7 +19,7 @@ body {
 }
 #container {
     margin: 10px;
-    padding: 50px;
+    padding: 70px;
 }
 button {
     background-color: #778DA9;
@@ -30,6 +30,7 @@ button {
     border-color: #E0E1DD;
     color: #0D1B2A;
     font-size: large;
+    /* Find a way to justify by using flex methods (see tabs) */
 }
 button:hover {
     box-shadow: #171928 0 4px 8px, #171928 0 7px 13px -3px, #171928 0 -3px 0 inset;
