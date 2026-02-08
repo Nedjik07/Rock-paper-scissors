@@ -35,17 +35,17 @@ function lost() {
 }
 // Win, loss, draw
 function win() {
-    humanScore++;
     score();
+    humanScore++;
 }
 function loss() {
-    computerScore++;
     score();
+    computerScore++;
 }
 function draw() {
+    score();
     computerScore = computerScore;
     humanScore = humanScore;
-    score();
 }
 // choices output
 function displayChoices(h, c) {
