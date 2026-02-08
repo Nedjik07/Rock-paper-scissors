@@ -54,7 +54,7 @@ function displayChoices(h, c) {
     const humanChoice = document.createElement("div");
     const computerChoice = document.createElement("div");
     const fight = document.createElement("img");
-    fight.src = "/Img/swords.png";
+    fight.src = "/swords.png";
     humanChoice.textContent = choices[h];
     computerChoice.textContent = choices[c]; // Should return option;
     humanChoice.classList.add("item", "human");
