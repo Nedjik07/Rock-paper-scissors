@@ -12,25 +12,40 @@ function play() {
    // Use div overlay here ?
 }
 function won() {
-    // Write function so that it looks good
+    const display = document.querySelector("#display");
+    display.replaceChildren();
+
+    const first = document.createElement("img");
+    first.src = "/Img/won.png";
+    first.classList.add("lostImg");
+    display.appendChild(first);
+    humanScore = 0;
+    computerScore = 0;
 }
 function lost() {
     const display = document.querySelector("#display");
     display.replaceChildren();
-    // const message = document.createElement("h1");
-    // message.textContent = "caca";
-    // display.appendChild(message);
+
+    const first = document.createElement("img");
+    first.src = "/Img/lost.png";
+    first.classList.add("lostImg");
+    display.appendChild(first);
+    humanScore = 0;
+    computerScore = 0;
 }
 // Win, loss, draw
 function win() {
     humanScore++;
+    score();
 }
 function loss() {
     computerScore++;
+    score();
 }
 function draw() {
     computerScore = computerScore;
     humanScore = humanScore;
+    score();
 }
 // choices output
 function displayChoices(h, c) {
@@ -38,34 +53,44 @@ function displayChoices(h, c) {
     const displayChoices = document.createElement("div"); // Change the name to use it differently
     const humanChoice = document.createElement("div");
     const computerChoice = document.createElement("div");
+    const fight = document.createElement("img");
+    fight.src = "/Img/swords.png";
     humanChoice.textContent = choices[h];
     computerChoice.textContent = choices[c]; // Should return option;
     humanChoice.classList.add("item", "human");
     computerChoice.classList.add("item", "computer");
     displayChoices.classList.add("displayChoices"); // Change this too
 
+    displayChoices.appendChild(humanChoice);
+    displayChoices.appendChild(fight);
+    displayChoices.appendChild(computerChoice);
+    display.appendChild(displayChoices);
 
-    display.appendChild(humanChoice);
-    display.appendChild(computerChoice);
-
-    // Add item class to items
-
-
-//     choices.setAttribute("style", "white-space: pre;");
-//     choices.textContent = "Your choice: " + h + "\r\n" + "Computer Choice: " + c;
-//     display.appendChild(choices);
-
+    // display.appendChild(humanChoice);
+    // display.appendChild(fight);
+    // display.appendChild(computerChoice);
 }
 function score() {
     const display = document.querySelector("#display");
-    display.replaceChildren(); // rmv children
     const scorePanel = document.createElement("div");
     const score = document.createElement("div");
+    const human = document.createElement("div");
+    const computer = document.createElement("div");
     score.setAttribute("style", "white-space: pre;");
     const h1 = document.createElement("h1");
     h1.textContent = "Score";
-    score.textContent = "You: " + humanScore + "Computer: " + computerScore;
+
+    human.textContent = humanScore;
+    computer.textContent = computerScore;
+
+    scorePanel.classList.add("scorePanel");
+    human.classList.add("humanScore");
+    computer.classList.add("computerScore");
+    score.classList.add("score");
+
     scorePanel.appendChild(h1);
+    score.appendChild(human);
+    score.appendChild(computer);
     scorePanel.appendChild(score);
     display.appendChild(scorePanel);
 }
@@ -96,9 +121,9 @@ function playRound(h) {
     // Think of a way to reinitialize score after winner
     console.log("c: " + computerScore + "h: " + humanScore); // this is a test
     if (humanScore === 5) {
-        alert("you won!"); // change for won function after creating it above
+        return won(); // change for won function after creating it above
     } else if(computerScore === 5) {
-        alert("you lost..."); // change for lost function after creating it above
+        return lost(); // change for lost function after creating it above
     }
     let c = getComputerChoice();
     // Add a function that shows choices
