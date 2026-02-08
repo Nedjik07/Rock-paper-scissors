@@ -16,7 +16,7 @@ function won() {
     display.replaceChildren();
 
     const first = document.createElement("img");
-    first.src = "/Img/won.png";
+    first.src = "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSJ40n2l1g3MJYX6B9IYs5J-mPrYGl0GXcDJxbyXUhYrHe9_QRH";
     first.classList.add("lostImg");
     display.appendChild(first);
     humanScore = 0;
@@ -27,7 +27,7 @@ function lost() {
     display.replaceChildren();
 
     const first = document.createElement("img");
-    first.src = "/Img/lost.png";
+    first.src = "https://www.kindpng.com/picc/m/125-1254800_funny-face-drawing-meme-hd-png-download.png";
     first.classList.add("lostImg");
     display.appendChild(first);
     humanScore = 0;
@@ -54,7 +54,7 @@ function displayChoices(h, c) {
     const humanChoice = document.createElement("div");
     const computerChoice = document.createElement("div");
     const fight = document.createElement("img");
-    fight.src = "/swords.png";
+    fight.src = "https://cdn-icons-png.flaticon.com/512/934/934478.png";
     humanChoice.textContent = choices[h];
     computerChoice.textContent = choices[c]; // Should return option;
     humanChoice.classList.add("item", "human");
