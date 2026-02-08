@@ -9,31 +9,41 @@ h1 {
 h2 {
     font-size: medium;
     color: yellow;
+    margin: 20px;
 }
 body {
     margin: auto;
-    background-color: #0D1B2A;
+    background-color: #1d230c;
     color: #E0E1DD;
     text-align: center;
     box-sizing: content-box;
 }
-#container {
-    margin: 10px;
-    padding: 70px;
-}
 button {
-    background-color: #778DA9;
+    margin: auto;
+    background-color: #d3e8c2;
     padding: 15px;
     border-radius: 10px;
     shape-outside: none;
-    border: 2px solid;
-    border-color: #E0E1DD;
+    border: 1px solid;
+    border-color: #a6b141;
     color: #0D1B2A;
     font-size: large;
     /* Find a way to justify by using flex methods (see tabs) */
 }
+#container {
+    padding: 70px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-flow: column;
+}
+#buttonContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
 button:hover {
-    box-shadow: #171928 0 4px 8px, #171928 0 7px 13px -3px, #171928 0 -3px 0 inset;
+    box-shadow: #1d230c 0 4px 8px, #1d230c 0 7px 13px -3px, #1d230c 0 -3px 0 inset;
     transform: translateY(-2px);
 }
 button:active { 
@@ -41,7 +51,7 @@ button:active {
     transform: translateY(2px);
 }
 #display {
-    background-color: lightblue;
+    background-color: #a6b141;
     height: 300px;
     width: auto;
     margin: auto 50px auto 50px;
@@ -50,20 +60,25 @@ button:active {
     shape-outside: none;
     border: 2px solid black;
 }
+.human {
+    background-color: rgb(96, 172, 166);
+}
+.computer {
+    background-color: rgb(227, 176, 105);
+}
 .item {
     border-radius: 10px;
+    color: #000000;
     shape-outside: none;
-    border: 2px solid;
-    background-color: black;
+    border: 2px solid black;
     width: 100px;
-    height: 30px;
+    height: 20px;
     margin: 25px auto 25px auto;
     text-align: center;
     padding: 10px 0;
     border-radius: 10px;
-    border: 2px red;
     shape-outside: none;
-    /* Center the options */
+    /* Center the options blue red for enemy */
 }
 .displayChoices {
     display: flex;

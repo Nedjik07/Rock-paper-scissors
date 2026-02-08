@@ -40,8 +40,8 @@ function displayChoices(h, c) {
     const computerChoice = document.createElement("div");
     humanChoice.textContent = choices[h];
     computerChoice.textContent = choices[c]; // Should return option;
-    humanChoice.classList.add("item");
-    computerChoice.classList.add("item");
+    humanChoice.classList.add("item", "human");
+    computerChoice.classList.add("item", "computer");
     displayChoices.classList.add("displayChoices"); // Change this too
 
 
